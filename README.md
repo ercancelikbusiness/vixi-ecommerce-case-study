@@ -21,7 +21,7 @@ End-to-end custom e-commerce platform built for **[vixiwear.com](https://vixiwea
 | **Accounts** | Phone-OTP (Netgsm) + email/password on a single identity · address book · favorites · order history · returns portal · support tickets · marketing consent |
 | **Order lifecycle** | `PENDING→PAID→PROCESSING→SHIPPED→DELIVERED` (+CANCELLED/FAILED/EXPIRED) · self-service cancel before processing · partial refunds via iyzico item transactions · stock restore on cancel |
 | **Shipping** | Carrier-agnostic via BasitKargo & KargoJet aggregators (Yurtiçi, MNG, Aras, Hepsijet…) — quote→barcode→printable label→webhook→delivery emails · return-cargo codes · polling cron fallback · shipment event timeline |
-| **Invoicing** | **BirFatura** e-Archive/e-Invoice auto-issued on shipment + PDF email · taxpayer registry lookup · gider pusulası (withholding slip) reminders |
+| **Invoicing** | e-Archive/e-Invoice auto-issued on shipment + PDF email · taxpayer registry lookup · gider pusulası (withholding slip) reminders |
 | **Admin** | Dashboard · orders/products/categories/customers/members/support/CMS pages/size charts/site settings · dark mode · realtime order feed · Telegram new-order + ops alerts + daily health report (SMS balance, pending shipments/invoices/refunds/tickets) |
 | **Compliance** | KVKK cookie consent (analytics/marketing separately gated) · legal pages CMS · ETBİS registration · Turnstile bot protection · IP rate limiting · RLS everywhere |
 | **Marketing** | GA4 + Meta Pixel + Meta CAPI + Microsoft Clarity (all consent-gated) · Google Merchant feed · Google Customer Reviews · product JSON-LD · dynamic sitemap/robots |
