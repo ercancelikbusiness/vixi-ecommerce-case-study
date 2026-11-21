@@ -31,6 +31,13 @@ End-to-end custom e-commerce platform built for **[vixiwear.com](https://vixiwea
 | ![Catalog](screenshots/desktop-products.png) | ![Product](screenshots/desktop-product.png) |
 | ![Mobile home](screenshots/mobile-home.png) | ![Mobile product](screenshots/mobile-product.png) |
 
+**Admin panel** (customer PII blurred):
+
+| | |
+|---|---|
+| ![Dashboard](screenshots/admin-dashboard.png) | ![Orders](screenshots/admin-orders.png) |
+| ![Products](screenshots/admin-products.png) | ![Members](screenshots/admin-members.png) |
+
 ## Architecture highlights
 
 - **No SDK for the payment processor** — IYZWSv2 auth = `HMACSHA256(randomKey + uri + body, secret)` implemented by hand; callback detail signatures verified before touching order state.
