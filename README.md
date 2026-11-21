@@ -28,15 +28,16 @@ End-to-end custom e-commerce platform built for **[vixiwear.com](https://vixiwea
 
 | | |
 |---|---|
-| ![Catalog](screenshots/desktop-products.png) | ![Product](screenshots/desktop-product.png) |
-| ![Mobile home](screenshots/mobile-home.png) | ![Mobile product](screenshots/mobile-product.png) |
+| ![Category showcase](screenshots/desktop-categories.png) | ![Catalog](screenshots/desktop-products.png) |
+| ![Product](screenshots/desktop-product.png) | ![Checkout](screenshots/desktop-checkout.png) |
+| ![Mobile home](screenshots/mobile-home.png) | ![Account](screenshots/hesabim.png) |
 
 **Admin panel** (customer PII blurred):
 
 | | |
 |---|---|
 | ![Dashboard](screenshots/admin-dashboard.png) | ![Orders](screenshots/admin-orders.png) |
-| ![Products](screenshots/admin-products.png) | ![Members](screenshots/admin-members.png) |
+| ![Products](screenshots/admin-products.png) | ![Settings](screenshots/admin-ayarlar.png) |
 
 ## Architecture highlights
 
