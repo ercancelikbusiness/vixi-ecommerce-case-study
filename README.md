@@ -3,7 +3,7 @@
 End-to-end custom e-commerce platform built for **[vixiwear.com](https://vixiwear.com)**, a Turkish fashion brand. Live in production — processing real orders, payments, shipments, invoices and returns.
 
 > **Built by Ercan Çelik** — full-stack design, build, integrations and launch.
-> [Portfolio](https://ercancelikbusiness.github.io) · [LinkedIn](https://www.linkedin.com/in/ercan-çelik-7b13a9324) · ercancelikbusiness@gmail.com
+> [Portfolio](https://ercancelikbusiness.github.io) · [LinkedIn](https://www.linkedin.com/in/ercancelikdev) · ercancelikbusiness@gmail.com
 
 ![Storefront](screenshots/desktop-home.png)
 
