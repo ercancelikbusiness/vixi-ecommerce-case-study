@@ -1,4 +1,4 @@
-# VIXI — Production E-Commerce Platform (Case Study)
+# VIXI Wear — Production E-Commerce Platform (Case Study)
 
 End-to-end custom e-commerce platform built for **[vixiwear.com](https://vixiwear.com)**, a Turkish fashion brand. Live in production — processing real orders, payments, shipments, invoices and returns.
 
