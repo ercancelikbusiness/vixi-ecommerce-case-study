@@ -25,6 +25,7 @@ End-to-end custom e-commerce platform built for **[vixiwear.com](https://vixiwea
 | **Admin** | Dashboard · orders/products/categories/customers/members/support/CMS pages/size charts/site settings · dark mode · realtime order feed · Telegram new-order + ops alerts + daily health report (SMS balance, pending shipments/invoices/refunds/tickets) |
 | **Compliance** | KVKK cookie consent (analytics/marketing separately gated) · legal pages CMS · ETBİS registration · Turnstile bot protection · IP rate limiting · RLS everywhere |
 | **Marketing** | GA4 + Meta Pixel + Meta CAPI + Microsoft Clarity (all consent-gated) · Google Merchant feed · Google Customer Reviews · product JSON-LD · dynamic sitemap/robots |
+| **Reliability** | ISR-cached storefront (home + product pages, 5-min; new products on-demand) · 8s query timeouts with fatal-vs-tolerated policy · branded error screen (Sentry-captured) · `revalidatePath` on admin mutations + stock-zero crossings |
 
 | | |
 |---|---|
@@ -47,6 +48,7 @@ End-to-end custom e-commerce platform built for **[vixiwear.com](https://vixiwea
 - **Invoice timing = shipment** — e-Archive/e-Invoice issues when an order ships (VUK 7-day compliant, no wasted quota on pre-shipment cancels); iyzico `cancel` same-day → `refund` next-day → manual fallback.
 - **Consent-gated analytics** — GA4/Meta/Clarity/CAPI scripts only mount after explicit opt-in; no trackers = no banner, KVKK-clean.
 - **Security** — RLS on every table (default-deny), Turnstile on auth/SMS/contact, DB-backed IP rate limits, lazy secret init (missing env never breaks builds), server-side verification of every client-supplied value.
+- **Degradation-tolerant storefront** — home + product pages serve from ISR cache (5 min; known products prerendered, new ones on-demand), so a stalled provider returns the last good page in ~0.3s instead of hanging. Every storefront query carries an 8s timeout: critical failures throw (stale cache survives / branded "we'll be back" screen), secondary failures hide only their section. Admin mutations and stock→0 crossings call `revalidatePath` so changes go live instantly.
 
 ## Hard problems solved along the way
 
@@ -54,6 +56,7 @@ End-to-end custom e-commerce platform built for **[vixiwear.com](https://vixiwea
 - Cargo provider returned `COMPLETED` instead of documented `DELIVERED` → status mapping + alerting corrected against live payloads.
 - Netgsm OTP endpoint rejects Turkish characters → ASCII normalization + channel fallback; header approval requires BTK-compliant sender names.
 - Supabase egress + Vercel image-optimization quota crises → client-side image compression, 31-day cache TTLs, bounded hero video.
+- Supabase API degradation made homepage SSR hang ~40s (Sentry downtime alert + user-reported black screen) → diagnosed layer by layer (static assets fast, data page hanging; DNS/Cloudflare/Vercel eliminated) → storefront converted to ISR + query timeouts + branded error boundary. One subtlety found along the way: `searchParams` (legacy `?kategori=` redirects) silently forced the page dynamic — moved to proxy-level redirects to unlock ISR.
 
 ## Source code
 
